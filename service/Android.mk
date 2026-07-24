@@ -21,6 +21,7 @@ LOCAL_CFLAGS        += -DACDB_DELTA_FILE_PATH="/data/vendor/audio/acdbdata/delta
 
 LOCAL_C_INCLUDES    := $(LOCAL_PATH)/inc/public
 LOCAL_C_INCLUDES    += $(LOCAL_PATH)/inc/private
+LOCAL_C_INCLUDES    += $(TOP)/vendor/qcom/opensource/pal/session/inc
 
 #if android version is R, use qtitinyalsa headers otherwise use upstream ones
 #This assumes we would be using AR code only for Android R and subsequent versions.
@@ -70,4 +71,3 @@ LOCAL_HEADER_LIBRARIES += libaudiologutils_headers
 endif
 
 include $(BUILD_SHARED_LIBRARY)
-

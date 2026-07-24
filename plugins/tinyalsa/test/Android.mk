@@ -1,4 +1,5 @@
 LOCAL_PATH := $(call my-dir)
+AGM_PAL_SESSION_HEADERS := $(TOP)/vendor/qcom/opensource/pal/session/inc
 include $(CLEAR_VARS)
 
 LOCAL_MODULE        := libagmmixer
@@ -8,6 +9,7 @@ LOCAL_VENDOR_MODULE := true
 
 LOCAL_CFLAGS        += -Wno-unused-parameter -Wno-unused-result
 LOCAL_SRC_FILES     := agmmixer.c
+LOCAL_C_INCLUDES    += $(AGM_PAL_SESSION_HEADERS)
 
 LOCAL_HEADER_LIBRARIES := \
     libagm_headers \
@@ -39,6 +41,7 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_CFLAGS        += -Wno-unused-parameter -Wno-unused-result
 LOCAL_CFLAGS        += -DBACKEND_CONF_FILE=\"/vendor/etc/backend_conf.xml\"
 LOCAL_SRC_FILES     := agmplay.c
+LOCAL_C_INCLUDES    += $(AGM_PAL_SESSION_HEADERS)
 
 LOCAL_HEADER_LIBRARIES := \
     libagm_headers \
@@ -67,6 +70,7 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_CFLAGS        += -Wno-unused-parameter -Wno-unused-result
 LOCAL_CFLAGS        += -DBACKEND_CONF_FILE=\"/vendor/etc/backend_conf.xml\"
 LOCAL_SRC_FILES     := agmcap.c
+LOCAL_C_INCLUDES    += $(AGM_PAL_SESSION_HEADERS)
 
 LOCAL_HEADER_LIBRARIES := \
     libagm_headers \
@@ -96,6 +100,7 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_CFLAGS        += -Wno-unused-parameter -Wno-unused-result
 LOCAL_CFLAGS        += -DBACKEND_CONF_FILE=\"/vendor/etc/backend_conf.xml\"
 LOCAL_SRC_FILES     := agmhostless.c
+LOCAL_C_INCLUDES    += $(AGM_PAL_SESSION_HEADERS)
 
 LOCAL_HEADER_LIBRARIES := \
     libagm_headers \
@@ -125,8 +130,7 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_CFLAGS        += -Wno-unused-parameter -Wno-unused-result
 LOCAL_CFLAGS        += -DBACKEND_CONF_FILE=\"/vendor/etc/backend_conf.xml\"
 
-LOCAL_C_INCLUDES    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+LOCAL_C_INCLUDES    += $(AGM_PAL_SESSION_HEADERS)
 
 LOCAL_SRC_FILES     := agmcompressplay.c
 
@@ -162,8 +166,7 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_CFLAGS        += -Wno-unused-parameter -Wno-unused-result
 LOCAL_CFLAGS        += -DBACKEND_CONF_FILE=\"/vendor/etc/backend_conf.xml\"
 
-LOCAL_C_INCLUDES    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+LOCAL_C_INCLUDES    += $(AGM_PAL_SESSION_HEADERS)
 
 LOCAL_SRC_FILES     := agmcompresscap.c
 
@@ -199,6 +202,7 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_CFLAGS        += -Wno-unused-parameter -Wno-unused-result
 LOCAL_CFLAGS        += -DBACKEND_CONF_FILE=\"/vendor/etc/backend_conf.xml\"
 LOCAL_SRC_FILES     := agm_voiceui.c
+LOCAL_C_INCLUDES    += $(AGM_PAL_SESSION_HEADERS)
 
 LOCAL_HEADER_LIBRARIES := \
     libagm_headers \
