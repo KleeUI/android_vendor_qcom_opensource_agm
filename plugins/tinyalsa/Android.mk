@@ -40,6 +40,7 @@ endif
 
 include $(BUILD_SHARED_LIBRARY)
 
+
 # Build libagm_mixer_plugin
 include $(CLEAR_VARS)
 
@@ -87,9 +88,6 @@ LOCAL_MODULE_OWNER  := qti
 LOCAL_MODULE_TAGS   := optional
 LOCAL_VENDOR_MODULE := true
 
-LOCAL_C_INCLUDES    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-
 LOCAL_SRC_FILES     := src/agm_compress_plugin.c
 
 LOCAL_HEADER_LIBRARIES := \
@@ -125,4 +123,3 @@ LOCAL_HEADER_LIBRARIES += libaudiologutils_headers
 endif
 
 include $(BUILD_SHARED_LIBRARY)
-
