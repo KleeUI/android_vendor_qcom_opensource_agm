@@ -1,6 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libagmclient
+LOCAL_MULTILIB := 64
 LOCAL_MODULE_OWNER := qti
 LOCAL_VENDOR_MODULE := true
 

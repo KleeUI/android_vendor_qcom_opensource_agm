@@ -3,6 +3,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE        := libagmaidltypeconverter
+LOCAL_MULTILIB      := 64
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_CFLAGS += -v -Wall  -Wextra -Wthread-safety

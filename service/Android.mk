@@ -6,6 +6,11 @@ LOCAL_VENDOR_MODULE         := true
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/inc/public
 include $(BUILD_HEADER_LIBRARY)
 
+# Cupid currently consumes the ABI-matched prebuilt exposed to Soong. Keep the
+# source module enabled for every other product until the full AudioReach stack
+# is converted from Make to Soong together.
+ifneq ($(TARGET_PRODUCT),cupid)
+
 # Build libagm
 include $(CLEAR_VARS)
 
@@ -71,3 +76,5 @@ LOCAL_HEADER_LIBRARIES += libaudiologutils_headers
 endif
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif
