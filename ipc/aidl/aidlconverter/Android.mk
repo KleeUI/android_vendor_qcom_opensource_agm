@@ -1,5 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
+ifneq ($(TARGET_PRODUCT),cupid)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE        := libagmaidltypeconverter
@@ -31,3 +32,4 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_HEADER_LIBRARIES := libagm_headers
 
 include $(BUILD_STATIC_LIBRARY)
+endif

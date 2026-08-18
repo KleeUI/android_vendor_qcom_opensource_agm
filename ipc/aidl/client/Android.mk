@@ -1,4 +1,7 @@
 LOCAL_PATH := $(call my-dir)
+
+ifneq ($(TARGET_PRODUCT),cupid)
+ifneq ($(TARGET_USES_PREBUILT_AUDIOREACH_GRAPH_SERVICES),true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libagmclient
 LOCAL_MULTILIB := 64
@@ -27,3 +30,6 @@ LOCAL_STATIC_LIBRARIES := libagmaidltypeconverter libaidlcommonsupport
 LOCAL_HEADER_LIBRARIES := libagm_headers
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif
+endif
