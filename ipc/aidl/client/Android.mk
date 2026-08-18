@@ -8,6 +8,8 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_CFLAGS        += -v -Wall -Wthread-safety
 LOCAL_TIDY := true
 
+LOCAL_C_INCLUDES    += $(TOP)/vendor/qcom/opensource/agm/service/inc/public
+
 LOCAL_SRC_FILES := \
     AgmClientWrapper.cpp \
     AgmCallback.cpp

@@ -10,6 +10,7 @@ LOCAL_CFLAGS += -v -Wall  -Wextra -Wthread-safety
 LOCAL_TIDY := true
 
 LOCAL_C_INCLUDES    := $(LOCAL_PATH)/inc
+LOCAL_C_INCLUDES    += $(TOP)/vendor/qcom/opensource/agm/service/inc/public
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/inc
 
 LOCAL_SRC_FILES     := \

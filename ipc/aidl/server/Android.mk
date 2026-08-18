@@ -8,6 +8,7 @@ LOCAL_MODULE_OWNER  := qti
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_C_INCLUDES    := $(LOCAL_PATH)/inc
+LOCAL_C_INCLUDES    += $(TOP)/vendor/qcom/opensource/agm/service/inc/public
 
 LOCAL_CLANG             := true
 LOCAL_TIDY              := true
