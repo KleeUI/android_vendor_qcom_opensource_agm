@@ -17,8 +17,8 @@ cc_library_shared {
         "-Wno-macro-redefined",
         "-Wall",
         "-D_GNU_SOURCE",
-        "-DACDB_PATH=\\\"/vendor/etc/acdbdata/\\\"",
-        "-DACDB_DELTA_FILE_PATH=\\\"/data/vendor/audio/acdbdata/delta\\\"",
+        "-DACDB_PATH=\"/vendor/etc/acdbdata/\"",
+        "-DACDB_DELTA_FILE_PATH=\"/data/vendor/audio/acdbdata/delta\"",
         "-DDYNAMIC_LOG_ENABLED",
     ],
     local_include_dirs: [
@@ -42,6 +42,7 @@ cc_library_shared {
     ],
     header_libs: [
         "libspf-headers",
+        "libarosal_headers",
         "libutils_headers",
         "libacdb_headers",
         "libaudiologutils_headers",

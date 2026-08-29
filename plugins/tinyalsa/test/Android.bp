@@ -28,10 +28,11 @@ cc_defaults {
     cflags: [
         "-Wno-unused-parameter",
         "-Wno-unused-result",
-        "-DBACKEND_CONF_FILE=\\\"/vendor/etc/backend_conf.xml\\\"",
+        "-DBACKEND_CONF_FILE=\"/vendor/etc/backend_conf.xml\"",
     ],
     header_libs: [
         "libagm_headers",
+        "libarosal_headers",
         "libacdb_headers",
     ],
     shared_libs: [
