@@ -1,0 +1,30 @@
+cc_library_shared {
+    name: "libagmclient",
+    owner: "qti",
+    vendor: true,
+    compile_multilib: "64",
+    cflags: [
+        "-v",
+        "-Wall",
+        "-Wthread-safety",
+    ],
+    tidy: true,
+    include_dirs: ["vendor/qcom/opensource/agm/service/inc/public"],
+    srcs: [
+        "AgmClientWrapper.cpp",
+        "AgmCallback.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libbase",
+        "libcutils",
+        "libutils",
+        "vendor.qti.hardware.agm-V1-ndk",
+        "libbinder_ndk",
+    ],
+    static_libs: [
+        "libagmaidltypeconverter",
+        "libaidlcommonsupport",
+    ],
+    header_libs: ["libagm_headers"],
+}

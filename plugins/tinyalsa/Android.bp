@@ -1,0 +1,52 @@
+cc_defaults {
+    name: "klee_agm_plugin_defaults",
+    vendor: true,
+    compile_multilib: "64",
+    cflags: [
+        "-Wall",
+        "-DDYNAMIC_LOG_ENABLED",
+    ],
+    header_libs: [
+        "libagm_headers",
+        "libarosal_headers",
+        "libaudiologutils_headers",
+    ],
+    include_dirs: ["external/expat/lib"],
+    shared_libs: [
+        "libagmclient",
+        "libutils",
+        "libcutils",
+        "liblog",
+        "libaudio_log_utils",
+        "libexpat",
+    ],
+}
+
+cc_library_shared {
+    name: "libagm_pcm_plugin",
+    defaults: ["klee_agm_plugin_defaults"],
+    srcs: ["src/agm_pcm_plugin.c"],
+    shared_libs: ["libsndcardparser", "libtinyalsa"],
+}
+
+cc_library_shared {
+    name: "libagm_mixer_plugin",
+    defaults: ["klee_agm_plugin_defaults"],
+    srcs: ["src/agm_mixer_plugin.c"],
+    shared_libs: ["libsndcardparser", "libtinyalsa"],
+}
+
+cc_library_shared {
+    name: "libagm_compress_plugin",
+    defaults: ["klee_agm_plugin_defaults"],
+    srcs: ["src/agm_compress_plugin.c"],
+    include_dirs: [
+        "external/tinycompress/include",
+        "external/expat/lib",
+    ],
+    shared_libs: [
+        "libsndcardparser",
+        "libtinyalsa",
+        "libtinycompress",
+    ],
+}

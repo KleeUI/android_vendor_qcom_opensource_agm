@@ -1,0 +1,59 @@
+// Audio Graph Manager source runtime for KleeUI Cupid.
+// The lower graph/ACDB/OSAL ABI remains supplied by the matching vendor kit.
+cc_library_headers {
+    name: "libagm_headers",
+    vendor: true,
+    export_include_dirs: ["inc/public"],
+}
+
+cc_library_shared {
+    name: "libagm",
+    owner: "qti",
+    vendor: true,
+    compile_multilib: "64",
+    cflags: [
+        "-D_ANDROID_",
+        "-Wno-tautological-compare",
+        "-Wno-macro-redefined",
+        "-Wall",
+        "-D_GNU_SOURCE",
+        "-DACDB_PATH=\\\"/vendor/etc/acdbdata/\\\"",
+        "-DACDB_DELTA_FILE_PATH=\\\"/data/vendor/audio/acdbdata/delta\\\"",
+        "-DDYNAMIC_LOG_ENABLED",
+    ],
+    local_include_dirs: [
+        "inc/public",
+        "inc/private",
+    ],
+    include_dirs: [
+        "vendor/qcom/opensource/pal/session/inc",
+        "external/expat/lib",
+    ],
+    export_include_dirs: ["inc/public"],
+    srcs: [
+        "src/agm.c",
+        "src/graph.c",
+        "src/graph_module.c",
+        "src/metadata.c",
+        "src/session_obj.c",
+        "src/device.c",
+        "src/utils.c",
+        "src/device_hw_ep.c",
+    ],
+    header_libs: [
+        "libspf-headers",
+        "libutils_headers",
+        "libacdb_headers",
+        "libaudiologutils_headers",
+    ],
+    shared_libs: [
+        "//vendor/xiaomi/sm8450-common:libar-gsl",
+        "liblog",
+        "//vendor/xiaomi/sm8450-common:liblx-osal",
+        "libaudioroute",
+        "//vendor/xiaomi/sm8450-common:libats",
+        "libtinyalsa",
+        "libaudio_log_utils",
+        "libexpat",
+    ],
+}

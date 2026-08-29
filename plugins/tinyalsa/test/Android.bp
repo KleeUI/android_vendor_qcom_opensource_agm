@@ -1,0 +1,22 @@
+cc_library_shared {
+    name: "libagmmixer",
+    owner: "qti",
+    vendor: true,
+    compile_multilib: "64",
+    cflags: [
+        "-Wno-unused-parameter",
+        "-Wno-unused-result",
+    ],
+    srcs: ["agmmixer.c"],
+    include_dirs: [
+        "vendor/qcom/opensource/pal/session/inc",
+    ],
+    header_libs: [
+        "libagm_headers",
+        "libacdb_headers",
+    ],
+    shared_libs: [
+        "libtinyalsa",
+        "libexpat",
+    ],
+}

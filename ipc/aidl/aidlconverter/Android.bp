@@ -1,0 +1,31 @@
+cc_library_static {
+    name: "libagmaidltypeconverter",
+    owner: "qti",
+    vendor: true,
+    compile_multilib: "64",
+    cflags: [
+        "-v",
+        "-Wall",
+        "-Wextra",
+        "-Wthread-safety",
+    ],
+    tidy: true,
+    local_include_dirs: ["inc"],
+    include_dirs: ["vendor/qcom/opensource/agm/service/inc/public"],
+    export_include_dirs: ["inc"],
+    srcs: [
+        "src/AgmLegacyToAidl.cpp",
+        "src/AgmAidlToLegacy.cpp",
+    ],
+    static_libs: ["libaidlcommonsupport"],
+    shared_libs: [
+        "liblog",
+        "libbinder_ndk",
+        "libbase",
+        "libcutils",
+        "libutils",
+        "//vendor/xiaomi/sm8450-common:libar-gsl",
+        "vendor.qti.hardware.agm-V1-ndk",
+    ],
+    header_libs: ["libagm_headers"],
+}

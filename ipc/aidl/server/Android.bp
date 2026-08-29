@@ -1,0 +1,31 @@
+cc_library_shared {
+    name: "libagmipcservice",
+    owner: "qti",
+    vendor: true,
+    compile_multilib: "64",
+    cflags: [
+        "-v",
+        "-Wall",
+        "-Wthread-safety",
+    ],
+    tidy: true,
+    include_dirs: ["vendor/qcom/opensource/agm/service/inc/public"],
+    srcs: [
+        "Service.cpp",
+        "AgmServerWrapper.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libbinder_ndk",
+        "libbase",
+        "libcutils",
+        "libutils",
+        "//vendor/xiaomi/sm8450-common:libar-gsl",
+        "libagm",
+        "vendor.qti.hardware.agm-V1-ndk",
+    ],
+    static_libs: [
+        "libagmaidltypeconverter",
+        "libaidlcommonsupport",
+    ],
+}

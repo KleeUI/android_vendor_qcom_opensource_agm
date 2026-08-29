@@ -1,5 +1,6 @@
 aidl_interface {
     name: "vendor.qti.hardware.agm",
+    owner: "qti",
     vendor: true,
     srcs: ["vendor/qti/hardware/agm/*.aidl"],
     stability: "vintf",
@@ -14,7 +15,6 @@ aidl_interface {
             enabled: true,
         },
     },
-
     imports: [
         "android.hardware.common-V2",
     ],
@@ -25,5 +25,4 @@ aidl_interface {
         },
     ],
     frozen: true,
-
 }

@@ -1,3 +1,4 @@
+ifneq ($(TARGET_PRODUCT),cupid)
 LOCAL_PATH := $(call my-dir)
 # Build libagm_pcm_plugin
 include $(CLEAR_VARS)
@@ -126,3 +127,5 @@ LOCAL_HEADER_LIBRARIES += libaudiologutils_headers
 endif
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif

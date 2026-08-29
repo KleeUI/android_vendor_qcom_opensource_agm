@@ -1,6 +1,6 @@
+ifneq ($(TARGET_PRODUCT),cupid)
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(TARGET_PRODUCT),cupid)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE        := libagmaidltypeconverter
