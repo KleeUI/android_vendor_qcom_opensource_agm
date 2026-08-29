@@ -28,6 +28,7 @@ cc_library_shared {
     include_dirs: [
         "vendor/qcom/opensource/pal/session/inc",
         "external/expat/lib",
+        "vendor/qcom/opensource/audioreach/graphservices/gsl/api",
     ],
     export_include_dirs: ["inc/public"],
     srcs: [

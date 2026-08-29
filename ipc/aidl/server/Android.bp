@@ -9,7 +9,10 @@ cc_library_shared {
         "-Wthread-safety",
     ],
     tidy: true,
-    include_dirs: ["vendor/qcom/opensource/agm/service/inc/public"],
+    include_dirs: [
+        "vendor/qcom/opensource/agm/service/inc/public",
+        "vendor/qcom/opensource/audioreach/graphservices/gsl/api",
+    ],
     srcs: [
         "Service.cpp",
         "AgmServerWrapper.cpp",
