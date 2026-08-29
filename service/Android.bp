@@ -46,6 +46,7 @@ cc_library_shared {
         "libarosal_headers",
         "libutils_headers",
         "libacdb_headers",
+        "libats_headers",
         "libaudiologutils_headers",
     ],
     shared_libs: [
